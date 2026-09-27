@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaymak — авторские торты и десерты на заказ в Аликанте</title>
+  <meta name="description" content="Авторские торты, капкейки и десертные столы на заказ в Аликанте. Натуральные сливки и масло, ручная работа, без готовых смесей. Доставка по городу.">
+  <meta name="theme-color" content="#FBF6EF">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Демо-версия с вымышленными данными: не индексируется. Уберите эту строку, когда появятся настоящие контакты -->
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kaymak">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Kaymak — десерты, которые помнят">
+  <meta property="og:description" content="Авторские торты, капкейки и десертные столы на заказ в Аликанте. Из настоящих сливок, масла и сезонных ягод, без готовых смесей.">
+  <meta property="og:image" content="https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=630">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Двухъярусный торт в подрумяненной меренге на льняной скатерти">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" href="assets/fonts/playfair-display-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    // Класс .js включает анимации появления. Если main.js не загрузился за 3 секунды, контент показывается без них.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.kaymakReady) document.documentElement.classList.remove('js'); }, 3000);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Kaymak",
+    "description": "Авторские торты, капкейки и десертные столы на заказ в Аликанте.",
+    "image": "https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "telephone": "+34 612 345 678",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de Sant Vicent, 58",
+      "addressLocality": "Alicante",
+      "addressRegion": "Alicante",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 38.3476, "longitude": -0.4876 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "19:00"
+    }],
+    "sameAs": ["https://www.instagram.com/kaymak.alicante/"]
+  }
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Иконки: один спрайт, дальше подключаются через <use> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path class="check-path" d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7.5 4h2.2l1.3 4-1.8 1.3a11 11 0 0 0 5.5 5.5l1.3-1.8 4 1.3v2.2A2 2 0 0 1 18 20.5 14.5 14.5 0 0 1 3.5 6 2 2 0 0 1 5.5 4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 0-6.9 12l-1.1 4 4.1-1.1A8 8 0 1 0 12 4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.8" cy="7.2" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Kaymak, в начало страницы">Kaymak</a>
+
+      <nav class="nav" aria-label="Разделы сайта">
+        <ul class="nav__list" role="list">
+          <li><a class="nav__link" href="#about">О мастере</a></li>
+          <li><a class="nav__link" href="#works">Работы</a></li>
+          <li><a class="nav__link" href="#prices">Цены</a></li>
+          <li><a class="nav__link" href="#steps">Как заказать</a></li>
+          <li><a class="nav__link" href="#reviews">Отзывы</a></li>
+          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--sm header__cta" href="#order">Заказать</a>
+
+      <button class="icon-btn header__burger" type="button" aria-label="Открыть меню" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false" data-menu-open>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img
+          src="https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280"
+          srcset="https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w,
+                  https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w,
+                  https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w,
+                  https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w,
+                  https://images.pexels.com/photos/19651065/pexels-photo-19651065.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000 2000w"
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          width="1280" height="1920"
+          alt="Двухъярусный торт в подрумяненной меренге на льняной скатерти"
+          fetchpriority="high" decoding="async">
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line">Десерты,</span>
+            <span class="hero__line">которые помнят</span>
+          </h1>
+          <p class="hero__lead">Авторские торты, капкейки и&nbsp;десертные столы на&nbsp;заказ в&nbsp;Аликанте. Из&nbsp;настоящих сливок, масла и&nbsp;сезонных ягод&nbsp;— без&nbsp;готовых смесей.</p>
+          <a class="btn btn--primary hero__cta" href="#order">Заказать</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. О мастере -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <figure class="about__media" data-reveal="image">
+          <div class="arch">
+            <img
+              src="https://images.unsplash.com/photo-1687561822667-c308ab7b97a7?auto=format&amp;fit=crop&amp;q=80&amp;w=960"
+              srcset="https://images.unsplash.com/photo-1687561822667-c308ab7b97a7?auto=format&amp;fit=crop&amp;q=80&amp;w=480 480w,
+                      https://images.unsplash.com/photo-1687561822667-c308ab7b97a7?auto=format&amp;fit=crop&amp;q=80&amp;w=720 720w,
+                      https://images.unsplash.com/photo-1687561822667-c308ab7b97a7?auto=format&amp;fit=crop&amp;q=80&amp;w=960 960w,
+                      https://images.unsplash.com/photo-1687561822667-c308ab7b97a7?auto=format&amp;fit=crop&amp;q=80&amp;w=1200 1200w"
+              sizes="(min-width: 1280px) 480px, (min-width: 1024px) 38vw, (min-width: 768px) 60vw, 88vw"
+              width="960" height="1707"
+              alt="Кондитер отсаживает карамельный крем по краю белого торта"
+              loading="lazy" decoding="async">
+          </div>
+        </figure>
+
+        <div class="about__text">
+          <h2 class="about__title" id="about-title" data-reveal>Привет, я&nbsp;Дина</h2>
+          <div class="about__copy" data-reveal style="--i: 1">
+            <p class="lead">Каймак&nbsp;— это самый нежный слой сливок. Он&nbsp;собирается сверху, когда молоко долго томится на&nbsp;медленном огне, и&nbsp;ускорить это нельзя. Я&nbsp;назвала кондитерскую в&nbsp;его честь, потому что с&nbsp;десертами так&nbsp;же.</p>
+            <p>Пеку в&nbsp;Аликанте с&nbsp;2019&nbsp;года. Сливки и&nbsp;масло беру у&nbsp;местных фермеров, шоколад&nbsp;— бельгийский, ягоды и&nbsp;фрукты&nbsp;— по&nbsp;сезону с&nbsp;Центрального рынка. Бисквиты, кремы и&nbsp;начинки готовлю с&nbsp;нуля.</p>
+            <p>Беру не&nbsp;больше шести заказов в&nbsp;неделю: каждому торту нужно время, а&nbsp;каждому празднику&nbsp;— внимание. Сначала расспрашиваю, кто будет за&nbsp;столом и&nbsp;что эти люди любят, а&nbsp;потом вместе придумываем вкус и&nbsp;декор.</p>
+          </div>
+
+          <div class="about__no" data-reveal style="--i: 2">
+            <h3 class="about__no-title">В&nbsp;моих десертах нет</h3>
+            <ul class="about__no-list" role="list">
+              <li>готовых смесей для бисквита и&nbsp;крема</li>
+              <li>маргарина и&nbsp;растительных сливок</li>
+              <li>синтетических ароматизаторов</li>
+              <li>консервантов, поэтому торт хранится три дня, а&nbsp;не&nbsp;три недели</li>
+            </ul>
+          </div>
+
+          <p class="signature" data-reveal style="--i: 3">
+            <span class="signature__name">Дина</span>
+            <span class="signature__role">кондитер, основательница Kaymak</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Портфолио -->
+    <section class="section works" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-head__title" id="works-title">Работы</h2>
+          <p class="section-head__intro">Двух одинаковых тортов здесь нет: каждый придуман под свой праздник. Откройте фото, чтобы рассмотреть детали.</p>
+        </div>
+
+        <div class="filter" role="group" aria-label="Показать работы" data-reveal style="--i: 1">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">Все</button>
+          <button class="chip" type="button" data-filter="wedding" aria-pressed="false">Свадебные</button>
+          <button class="chip" type="button" data-filter="kids" aria-pressed="false">Детские</button>
+          <button class="chip" type="button" data-filter="corporate" aria-pressed="false">Корпоративные</button>
+          <button class="chip" type="button" data-filter="cupcakes" aria-pressed="false">Капкейки</button>
+        </div>
+
+        <ul class="works__grid" role="list" data-works>
+          <li class="work" data-category="wedding" data-reveal="image" style="--i: 0">
+            <a class="work__link" href="https://images.unsplash.com/photo-1529635958611-473523f87664?auto=format&amp;fit=crop&amp;q=80&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 50% 40%">
+                  <img
+                    src="https://images.unsplash.com/photo-1529635958611-473523f87664?auto=format&amp;fit=crop&amp;q=80&amp;w=720"
+                    srcset="https://images.unsplash.com/photo-1529635958611-473523f87664?auto=format&amp;fit=crop&amp;q=80&amp;w=480 480w,
+                            https://images.unsplash.com/photo-1529635958611-473523f87664?auto=format&amp;fit=crop&amp;q=80&amp;w=720 720w,
+                            https://images.unsplash.com/photo-1529635958611-473523f87664?auto=format&amp;fit=crop&amp;q=80&amp;w=960 960w"
+                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, 46vw"
+                    width="720" height="1080"
+                    alt="Трёхъярусный белый торт с пионами и розами"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Три яруса с&nbsp;пионами</span>
+                  <span class="work__meta">Ванильный бисквит, малина, сливочный крем</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work" data-category="kids" data-reveal="image" style="--i: 1">
+            <a class="work__link" href="https://images.pexels.com/photos/20426690/pexels-photo-20426690.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 40% 50%">
+                  <img
+                    src="https://images.pexels.com/photos/20426690/pexels-photo-20426690.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960"
+                    srcset="https://images.pexels.com/photos/20426690/pexels-photo-20426690.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720 720w,
+                            https://images.pexels.com/photos/20426690/pexels-photo-20426690.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w,
+                            https://images.pexels.com/photos/20426690/pexels-photo-20426690.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w"
+                    sizes="(min-width: 1280px) 712px, (min-width: 1024px) 56vw, 86vw"
+                    width="960" height="640"
+                    alt="Детский торт с пряничным амбаром, поросёнком и цифрой 1"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Первый год</span>
+                  <span class="work__meta">Пряничная ферма, клубника со&nbsp;сливками</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work" data-category="cupcakes" data-reveal="image" style="--i: 2">
+            <a class="work__link" href="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&amp;fit=crop&amp;q=80&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 50% 60%">
+                  <img
+                    src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&amp;fit=crop&amp;q=80&amp;w=720"
+                    srcset="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&amp;fit=crop&amp;q=80&amp;w=480 480w,
+                            https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&amp;fit=crop&amp;q=80&amp;w=720 720w,
+                            https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&amp;fit=crop&amp;q=80&amp;w=960 960w"
+                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, 46vw"
+                    width="720" height="1080"
+                    alt="Капкейки с розовым кремом и белым шоколадом на розовой доске"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Малина и&nbsp;белый шоколад</span>
+                  <span class="work__meta">Дюжина капкейков, крем на&nbsp;маскарпоне</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work work--wide" data-category="corporate" data-reveal="image" style="--i: 0">
+            <a class="work__link" href="https://images.pexels.com/photos/19651272/pexels-photo-19651272.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 50% 60%">
+                  <img
+                    src="https://images.pexels.com/photos/19651272/pexels-photo-19651272.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280"
+                    srcset="https://images.pexels.com/photos/19651272/pexels-photo-19651272.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720 720w,
+                            https://images.pexels.com/photos/19651272/pexels-photo-19651272.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w,
+                            https://images.pexels.com/photos/19651272/pexels-photo-19651272.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
+                    sizes="(min-width: 1280px) 792px, (min-width: 1024px) 62vw, 46vw"
+                    width="1280" height="853"
+                    alt="Десертный стол: медовик на тёмной подставке, бисквитный торт с ягодами и шоколадный торт"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Десертный стол на&nbsp;открытии студии</span>
+                  <span class="work__meta">Медовик, «Виктория», шоколадный торт, 60&nbsp;гостей</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work" data-category="wedding" data-reveal="image" style="--i: 1">
+            <a class="work__link" href="https://images.unsplash.com/photo-1706188458145-f11cb33aa1a0?auto=format&amp;fit=crop&amp;q=80&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 50% 50%">
+                  <img
+                    src="https://images.unsplash.com/photo-1706188458145-f11cb33aa1a0?auto=format&amp;fit=crop&amp;q=80&amp;w=720"
+                    srcset="https://images.unsplash.com/photo-1706188458145-f11cb33aa1a0?auto=format&amp;fit=crop&amp;q=80&amp;w=480 480w,
+                            https://images.unsplash.com/photo-1706188458145-f11cb33aa1a0?auto=format&amp;fit=crop&amp;q=80&amp;w=720 720w,
+                            https://images.unsplash.com/photo-1706188458145-f11cb33aa1a0?auto=format&amp;fit=crop&amp;q=80&amp;w=960 960w"
+                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, 46vw"
+                    width="720" height="960"
+                    alt="Белый двухъярусный торт с рельефным кремом и белой розой"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Белый лён</span>
+                  <span class="work__meta">Лимонный бисквит, черника, белые розы</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work" data-category="kids" data-reveal="image" style="--i: 0">
+            <a class="work__link" href="https://images.unsplash.com/photo-1590174709246-f95754d54cc1?auto=format&amp;fit=crop&amp;q=80&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 50% 65%">
+                  <img
+                    src="https://images.unsplash.com/photo-1590174709246-f95754d54cc1?auto=format&amp;fit=crop&amp;q=80&amp;w=720"
+                    srcset="https://images.unsplash.com/photo-1590174709246-f95754d54cc1?auto=format&amp;fit=crop&amp;q=80&amp;w=480 480w,
+                            https://images.unsplash.com/photo-1590174709246-f95754d54cc1?auto=format&amp;fit=crop&amp;q=80&amp;w=720 720w,
+                            https://images.unsplash.com/photo-1590174709246-f95754d54cc1?auto=format&amp;fit=crop&amp;q=80&amp;w=960 960w"
+                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, 46vw"
+                    width="720" height="1080"
+                    alt="Белый торт с розовыми свечами и радужной посыпкой"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Конфетти</span>
+                  <span class="work__meta">Шоколадный бисквит, вишня, радужная посыпка</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work" data-category="corporate" data-reveal="image" style="--i: 1">
+            <a class="work__link" href="https://images.pexels.com/photos/7552579/pexels-photo-7552579.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 50% 55%">
+                  <img
+                    src="https://images.pexels.com/photos/7552579/pexels-photo-7552579.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720"
+                    srcset="https://images.pexels.com/photos/7552579/pexels-photo-7552579.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w,
+                            https://images.pexels.com/photos/7552579/pexels-photo-7552579.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=720 720w,
+                            https://images.pexels.com/photos/7552579/pexels-photo-7552579.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w"
+                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, 46vw"
+                    width="720" height="1080"
+                    alt="Белый торт на золотой подложке в открытой подарочной коробке"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Торт для&nbsp;партнёров</span>
+                  <span class="work__meta">Ваниль и&nbsp;солёная карамель, подарочная коробка</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+
+          <li class="work" data-category="cupcakes" data-reveal="image" style="--i: 2">
+            <a class="work__link" href="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&amp;fit=crop&amp;q=80&amp;w=1600">
+              <figure class="work__figure">
+                <div class="work__media" style="--pos: 62% 50%">
+                  <img
+                    src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&amp;fit=crop&amp;q=80&amp;w=960"
+                    srcset="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&amp;fit=crop&amp;q=80&amp;w=720 720w,
+                            https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&amp;fit=crop&amp;q=80&amp;w=960 960w,
+                            https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&amp;fit=crop&amp;q=80&amp;w=1400 1400w"
+                    sizes="(min-width: 1280px) 712px, (min-width: 1024px) 56vw, 86vw"
+                    width="960" height="643"
+                    alt="Ванильные капкейки с белым кремом и сахарной посыпкой"
+                    loading="lazy" decoding="async">
+                  <span class="work__zoom" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </div>
+                <figcaption class="work__caption">
+                  <span class="work__title">Ванильное облако</span>
+                  <span class="work__meta">Дюжина капкейков, сахарная посыпка</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+
+        <p class="works__empty" hidden data-works-empty>В&nbsp;этой категории пока нет фото. Напишите мне&nbsp;— возможно, ваш торт станет первым.</p>
+      </div>
+    </section>
+
+    <!-- 4. Цены -->
+    <section class="section prices" id="prices" aria-labelledby="prices-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-head__title" id="prices-title">Цены</h2>
+          <p class="section-head__intro">Цена зависит от&nbsp;количества гостей, начинки и&nbsp;сложности декора. Здесь ориентир, точную сумму назову после обсуждения.</p>
+        </div>
+
+        <div class="menu-card" data-reveal style="--i: 1">
+          <div class="menu-card__col">
+            <table class="price-table">
+              <caption>
+                <span class="price-table__title">Торты</span>
+                <span class="price-table__unit">цена за&nbsp;торт, по&nbsp;числу порций</span>
+              </caption>
+              <thead class="visually-hidden">
+                <tr><th scope="col">Размер</th><th scope="col">Цена</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="price-table__item">6–8&nbsp;порций</span><span class="price-table__note">около 1&nbsp;кг</span></th>
+                  <td><span class="price-table__from">от</span> 42&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">10–12&nbsp;порций</span><span class="price-table__note">около 1,6&nbsp;кг</span></th>
+                  <td><span class="price-table__from">от</span> 62&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">16–20&nbsp;порций</span><span class="price-table__note">2&nbsp;яруса, около 2,6&nbsp;кг</span></th>
+                  <td><span class="price-table__from">от</span> 105&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">30 порций и&nbsp;больше</span><span class="price-table__note">многоярусный, свадебный</span></th>
+                  <td><span class="price-table__from">от</span> 5,50&nbsp;€<span class="price-table__per">за&nbsp;порцию</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="menu-card__col">
+            <table class="price-table">
+              <caption>
+                <span class="price-table__title">Капкейки</span>
+                <span class="price-table__unit">цена за&nbsp;дюжину</span>
+              </caption>
+              <thead class="visually-hidden">
+                <tr><th scope="col">Набор</th><th scope="col">Цена</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="price-table__item">Классические</span><span class="price-table__note">ваниль, шоколад, красный бархат</span></th>
+                  <td>30&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">С&nbsp;авторским декором</span><span class="price-table__note">кремовые цветы, ягоды, топперы</span></th>
+                  <td>38&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">Мини-капкейки</span><span class="price-table__note">24&nbsp;штуки в&nbsp;наборе</span></th>
+                  <td>34&nbsp;€</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="menu-card__col">
+            <table class="price-table">
+              <caption>
+                <span class="price-table__title">Десертный стол</span>
+                <span class="price-table__unit">цена за&nbsp;гостя</span>
+              </caption>
+              <thead class="visually-hidden">
+                <tr><th scope="col">Формат</th><th scope="col">Цена</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="price-table__item">Камерный</span><span class="price-table__note">4&nbsp;вида десертов, от&nbsp;15&nbsp;гостей</span></th>
+                  <td><span class="price-table__from">от</span> 9&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">Праздничный</span><span class="price-table__note">6&nbsp;видов десертов и&nbsp;торт, от&nbsp;25&nbsp;гостей</span></th>
+                  <td><span class="price-table__from">от</span> 14&nbsp;€</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="price-table__item">Сервировка</span><span class="price-table__note">стойки, посуда и&nbsp;декор стола</span></th>
+                  <td><span class="price-table__from">от</span> 60&nbsp;€<span class="price-table__per">за&nbsp;стол</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <ul class="prices__notes" role="list" data-reveal style="--i: 2">
+          <li>Предоплата 50% бронирует дату, остаток&nbsp;— при&nbsp;получении. Можно картой, переводом или через Bizum.</li>
+          <li>Доставка по&nbsp;Аликанте&nbsp;— 10&nbsp;€, в&nbsp;Сан-Хуан, Эль-Кампельо и&nbsp;Сан-Висенте&nbsp;— от&nbsp;15&nbsp;€. Самовывоз бесплатный.</li>
+          <li>Если у&nbsp;кого-то из&nbsp;гостей аллергия, скажите заранее: подберу подходящую начинку.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Как заказать -->
+    <section class="section steps" id="steps" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-head__title" id="steps-title">Как заказать</h2>
+          <p class="section-head__intro">От&nbsp;первого сообщения до&nbsp;торта на&nbsp;столе&nbsp;— четыре шага.</p>
+        </div>
+
+        <ol class="timeline" role="list">
+          <li class="timeline__step" data-reveal="step" style="--i: 0">
+            <span class="timeline__num" aria-hidden="true">1</span>
+            <h3 class="timeline__title">Связаться</h3>
+            <p class="timeline__text">Напишите в&nbsp;WhatsApp или Instagram либо оставьте заявку на&nbsp;сайте. Торт лучше заказать за&nbsp;<span class="nowrap">1–2&nbsp;недели</span>, свадебный&nbsp;— за&nbsp;<span class="nowrap">1–2&nbsp;месяца</span>.</p>
+          </li>
+          <li class="timeline__step" data-reveal="step" style="--i: 1">
+            <span class="timeline__num" aria-hidden="true">2</span>
+            <h3 class="timeline__title">Обсудить дизайн и&nbsp;вкус</h3>
+            <p class="timeline__text">Подберём начинку и&nbsp;декор, пришлю эскиз и&nbsp;точную цену. Перед свадьбой можно попробовать три начинки на&nbsp;дегустации.</p>
+          </li>
+          <li class="timeline__step" data-reveal="step" style="--i: 2">
+            <span class="timeline__num" aria-hidden="true">3</span>
+            <h3 class="timeline__title">Предоплата</h3>
+            <p class="timeline__text">Дата бронируется после предоплаты 50%: картой, переводом или через Bizum. Остаток&nbsp;— при&nbsp;получении.</p>
+          </li>
+          <li class="timeline__step" data-reveal="step" style="--i: 3">
+            <span class="timeline__num" aria-hidden="true">4</span>
+            <h3 class="timeline__title">Доставка или самовывоз</h3>
+            <p class="timeline__text">Привезу в&nbsp;назначенное время или заберёте сами в&nbsp;центре Аликанте. К&nbsp;торту приложу памятку, как его хранить и&nbsp;нарезать.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. Отзывы -->
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-head__title" id="reviews-title">Отзывы</h2>
+          <p class="section-head__intro">Пишут после праздников, иногда вместе с&nbsp;фото пустой тарелки.</p>
+        </div>
+
+        <ul class="reviews__grid" role="list">
+          <li data-reveal style="--i: 0">
+            <figure class="review">
+              <blockquote class="review__quote">
+                <p>Торт простоял на&nbsp;террасе весь вечер и&nbsp;не&nbsp;потерял форму, хотя было +30. Гости до&nbsp;сих пор спрашивают, где мы&nbsp;его заказывали.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__name">Марина</span>
+                <span class="review__event">Свадебный торт, июнь 2026</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal style="--i: 1">
+            <figure class="review">
+              <blockquote class="review__quote">
+                <p>Заказывали стол на&nbsp;годовщину компании. Всё привезли вовремя и&nbsp;красиво расставили, а&nbsp;медовик закончился первым&nbsp;— за&nbsp;ним стояла очередь.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__name">Олег</span>
+                <span class="review__event">Десертный стол на&nbsp;80&nbsp;гостей</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal style="--i: 0">
+            <figure class="review">
+              <blockquote class="review__quote">
+                <p>Просила без мастики и&nbsp;ярких красителей. Дина сделала ферму из&nbsp;пряника, и&nbsp;дочка пыталась съесть поросёнка ещё до&nbsp;свечки.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__name">Анна</span>
+                <span class="review__event">Торт на&nbsp;первый день рождения</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal style="--i: 1">
+            <figure class="review">
+              <blockquote class="review__quote">
+                <p>Взяла две дюжины капкейков в&nbsp;школу. Дети съели всё за&nbsp;десять минут, учителя попросили контакты. Каждая коробка была подписана от&nbsp;руки.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__name">Катерина</span>
+                <span class="review__event">Капкейки на&nbsp;выпускной</span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. Контакты и заявка -->
+    <section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts__layout">
+        <div class="section-head" id="order" data-reveal>
+          <h2 class="section-head__title" id="contacts-title">Заказать десерт</h2>
+          <p class="section-head__intro">Оставьте заявку, и&nbsp;я&nbsp;перезвоню или напишу в&nbsp;WhatsApp в&nbsp;течение дня, чтобы обсудить детали.</p>
+        </div>
+
+        <div class="order-card" data-reveal style="--i: 1">
+          <form class="form" action="#" method="post" novalidate data-order-form>
+            <div class="form__row">
+              <div class="field" data-field="name">
+                <label class="field__label" for="f-name">Как вас зовут</label>
+                <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="f-name-error">
+                <p class="field__error" id="f-name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field" data-field="phone">
+                <label class="field__label" for="f-phone">Телефон</label>
+                <input class="field__input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+34 600 000 000" maxlength="24" aria-describedby="f-phone-hint f-phone-error">
+                <p class="field__hint" id="f-phone-hint">С&nbsp;кодом страны, если номер не&nbsp;испанский</p>
+                <p class="field__error" id="f-phone-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="field" data-field="date">
+              <label class="field__label" for="f-date">Дата праздника</label>
+              <input class="field__input field__input--date" id="f-date" name="date" type="date" required aria-describedby="f-date-hint f-date-error">
+              <p class="field__hint" id="f-date-hint" data-date-hint>Не&nbsp;раньше чем через 3&nbsp;дня: нужно время, чтобы всё приготовить.</p>
+              <p class="field__error" id="f-date-error" aria-live="polite"></p>
+            </div>
+
+            <fieldset class="field field--choice" data-field="dessert" aria-describedby="f-dessert-error">
+              <legend class="field__label">Что готовим</legend>
+              <div class="choice">
+                <label class="choice__item"><input type="radio" name="dessert" value="Торт" required><span class="chip">Торт</span></label>
+                <label class="choice__item"><input type="radio" name="dessert" value="Капкейки"><span class="chip">Капкейки</span></label>
+                <label class="choice__item"><input type="radio" name="dessert" value="Десертный стол"><span class="chip">Десертный стол</span></label>
+                <label class="choice__item"><input type="radio" name="dessert" value="Другое"><span class="chip">Другое</span></label>
+              </div>
+              <p class="field__error" id="f-dessert-error" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="field" data-field="comment">
+              <label class="field__label" for="f-comment">Комментарий <span class="field__optional">необязательно</span></label>
+              <textarea class="field__input field__input--area" id="f-comment" name="comment" rows="4" maxlength="1000" placeholder="Сколько гостей, любимые вкусы, аллергии, идеи декора"></textarea>
+            </div>
+
+            <div class="form__footer">
+              <button class="btn btn--primary form__submit" type="submit">
+                <span class="btn__spinner" aria-hidden="true"></span>
+                <span class="btn__label" data-submit-label>Отправить заявку</span>
+              </button>
+              <p class="form__note">Контакты нужны только для&nbsp;связи по&nbsp;заказу.</p>
+            </div>
+            <p class="form__error" role="alert" hidden data-form-error></p>
+          </form>
+
+          <div class="success" hidden data-order-success>
+            <div class="success__head">
+              <span class="success__icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path class="success__check" d="M6 12.5l4 4 8-9"/></svg>
+              </span>
+              <span class="success__number" data-slot="number"></span>
+            </div>
+            <h3 class="success__title" tabindex="-1" data-success-title>Заявка отправлена</h3>
+            <p class="success__text">Спасибо, <span data-slot="name"></span>! Я&nbsp;перезвоню или напишу в&nbsp;WhatsApp на&nbsp;номер <span class="success__phone" data-slot="phone"></span> в&nbsp;течение дня, и&nbsp;мы&nbsp;обсудим вкус и&nbsp;декор.</p>
+            <dl class="success__summary">
+              <div class="success__row"><dt>Что готовим</dt><dd data-slot="dessert"></dd></div>
+              <div class="success__row"><dt>Дата праздника</dt><dd data-slot="date"></dd></div>
+              <div class="success__row success__row--block" data-slot-row="comment"><dt>Комментарий</dt><dd data-slot="comment"></dd></div>
+            </dl>
+            <p class="success__demo">Это демо-версия сайта: на&nbsp;самом деле заявка никуда не&nbsp;отправлена.</p>
+            <button class="btn btn--ghost" type="button" data-order-reset>Отправить ещё одну заявку</button>
+          </div>
+        </div>
+
+        <aside class="contacts__info" aria-label="Контакты" data-reveal style="--i: 2">
+          <dl class="contact-list">
+            <div class="contact-list__item">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Телефон и&nbsp;WhatsApp</dt>
+              <dd>
+                <a class="contact-list__main link" href="tel:+34612345678">+34 612 345 678</a>
+                <a class="link link--quiet" href="https://wa.me/34612345678" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+              </dd>
+            </div>
+            <div class="contact-list__item">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg>Instagram</dt>
+              <dd><a class="contact-list__main link" href="https://www.instagram.com/kaymak.alicante/" target="_blank" rel="noopener">@kaymak.alicante</a></dd>
+            </div>
+            <div class="contact-list__item">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Самовывоз</dt>
+              <dd>
+                <span class="contact-list__main">Carrer de Sant Vicent, 58, Alicante</span>
+                <span class="contact-list__sub">рядом с&nbsp;Центральным рынком</span>
+              </dd>
+            </div>
+            <div class="contact-list__item">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Часы работы</dt>
+              <dd>
+                <span class="contact-list__main"><span class="nowrap">Вт–сб</span>, <span class="nowrap">10:00–19:00</span></span>
+                <span class="contact-list__sub">в&nbsp;воскресенье только выдача заказов</span>
+              </dd>
+            </div>
+          </dl>
+
+          <!-- Карта: заглушка в палитре сайта, OpenStreetMap грузится только по кнопке -->
+          <div class="map-block">
+            <div class="map" data-map>
+              <div class="map__placeholder" data-map-placeholder>
+                <svg class="map__art" viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                  <rect width="400" height="280" class="map__land"/>
+                  <rect class="map__park" x="54" y="36" width="70" height="46" rx="10"/>
+                  <g class="map__streets">
+                    <path d="M-10 118L410 70"/>
+                    <path d="M-10 196l330-40"/>
+                    <path d="M88 -10l36 300"/>
+                    <path d="M214 -10l22 220"/>
+                    <path d="M300 -10l-4 180"/>
+                  </g>
+                  <g class="map__lanes">
+                    <path d="M-10 40l200-22"/>
+                    <path d="M150 -10l14 300"/>
+                    <path d="M-10 250l240-28"/>
+                    <path d="M260 20l140-16"/>
+                    <path d="M40 -10l20 300"/>
+                    <path d="M340 120l60-6"/>
+                  </g>
+                  <path class="map__sea" d="M332 0c-14 46 18 82 4 128-12 40-44 70-36 152h100V0z"/>
+                  <g class="map__pin" transform="translate(196 112)">
+                    <path d="M0 26s-15-13-15-25a15 15 0 0 1 30 0c0 12-15 25-15 25z"/>
+                    <circle cy="1" r="5.5"/>
+                  </g>
+                </svg>
+                <div class="map__overlay">
+                  <button class="btn btn--ghost btn--sm map__button" type="button" data-map-load>Показать карту</button>
+                  <p class="map__note">Загрузится карта OpenStreetMap</p>
+                </div>
+              </div>
+            </div>
+            <a class="link link--quiet map__link" href="https://www.google.com/maps/search/?api=1&amp;query=38.3476,-0.4876" target="_blank" rel="noopener">Открыть в&nbsp;Google Картах</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="#top">Kaymak</a>
+        <p class="footer__tagline">Авторские торты и&nbsp;десерты на&nbsp;заказ. Аликанте, Испания.</p>
+      </div>
+      <ul class="footer__links" role="list">
+        <li><a class="footer__link" href="https://www.instagram.com/kaymak.alicante/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg>Instagram</a></li>
+        <li><a class="footer__link" href="https://wa.me/34612345678" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a></li>
+        <li><a class="footer__link" href="tel:+34612345678"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>+34 612 345 678</a></li>
+      </ul>
+      <div class="footer__bottom">
+        <p>© <span data-year>2026</span> Kaymak</p>
+        <p>Демо-сайт: имя, контакты и&nbsp;отзывы вымышлены.</p>
+        <p>Фото: <a class="footer__link footer__link--inline" href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> и&nbsp;<a class="footer__link footer__link--inline" href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Мобильное меню -->
+  <dialog class="menu" id="menu" aria-label="Меню" data-menu>
+    <div class="menu__inner">
+      <div class="menu__top">
+        <a class="logo" href="#top" data-menu-link>Kaymak</a>
+        <button class="icon-btn" type="button" aria-label="Закрыть меню" data-menu-close>
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <nav aria-label="Разделы сайта">
+        <ul class="menu__list" role="list">
+          <li><a class="menu__link" href="#about" data-menu-link>О&nbsp;мастере</a></li>
+          <li><a class="menu__link" href="#works" data-menu-link>Работы</a></li>
+          <li><a class="menu__link" href="#prices" data-menu-link>Цены</a></li>
+          <li><a class="menu__link" href="#steps" data-menu-link>Как заказать</a></li>
+          <li><a class="menu__link" href="#reviews" data-menu-link>Отзывы</a></li>
+          <li><a class="menu__link" href="#contacts" data-menu-link>Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="menu__bottom">
+        <a class="btn btn--primary btn--block" href="#order" data-menu-link>Заказать</a>
+        <div class="menu__contacts">
+          <a class="link link--quiet" href="tel:+34612345678">+34 612 345 678</a>
+          <a class="link link--quiet" href="https://www.instagram.com/kaymak.alicante/" target="_blank" rel="noopener">@kaymak.alicante</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Просмотр фото из портфолио -->
+  <dialog class="lightbox" aria-labelledby="lightbox-title" data-lightbox>
+    <div class="lightbox__stage">
+      <figure class="lightbox__figure">
+        <div class="lightbox__frame">
+          <img class="lightbox__img" alt="" data-lightbox-img>
+        </div>
+        <figcaption class="lightbox__caption">
+          <span class="lightbox__title" id="lightbox-title" data-lightbox-title></span>
+          <span class="lightbox__meta" data-lightbox-meta></span>
+          <span class="lightbox__count" data-lightbox-count></span>
+        </figcaption>
+      </figure>
+    </div>
+    <button class="icon-btn lightbox__close" type="button" aria-label="Закрыть" data-lightbox-close>
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <button class="icon-btn lightbox__nav lightbox__nav--prev" type="button" aria-label="Предыдущее фото" data-lightbox-prev>
+      <svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg>
+    </button>
+    <button class="icon-btn lightbox__nav lightbox__nav--next" type="button" aria-label="Следующее фото" data-lightbox-next>
+      <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+    </button>
+  </dialog>
+</body>
+</html>
